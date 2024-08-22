@@ -1,10 +1,10 @@
 <h1>Budgerigar Spectrogram Generation</h1>
 Budgerigars display an astounding range of vocal plasticity. To capture this natural vocalization behavior, our lab opted for using piezoelectric microphones for audio analysis. The benefit of doing so over traditional (ambient) microphones is that audio quality is almost perfectly preserved even in noisy environments.
 
-<br/><br/>
-The main drawback to relying on piezoelectric microphone data is its high signal to noise ratio, as it is very sensitive to any disturbances or vibrations (wing flapping, feeding, etc.). Bird audio recordings can range from hours to over a 24-hour period, with periods of singing representing a very small portion of the total recording duration. Thus, it is an arduious task to segment and label such audio files by hand.
+<br/>
+The main drawback to relying on piezoelectric microphone data is its high signal to noise ratio, as it is very sensitive to any kinds of vibrations (wing flapping, feeding, etc.). Bird audio recordings can range from hours to over a 24-hour period, with periods of singing representing a very small portion of the total recording duration. Thus, it is an arduious task to segment and label such audio files by hand.
 
-<br/><br/>
+<br/>
 I have implemented a neural-network-based binary classifier to differentiate vocalizations from noise. This package will generate mel-scale spectrograms from an audio segment and its corresponding label file (event detections). These generated images are then used as the input to the neural network.
 
 
@@ -27,7 +27,7 @@ I have implemented a neural-network-based binary classifier to differentiate voc
 <h2>Spectrogram Generation</h2>
 Audio event detections are first high-pass filtered and zero-padded or cut to a length of 224 ms. Mel-scale spectrograms are generated from audio event detections using a window size of 8 ms and hop length of 1 ms with 225 frequency bands. 
 
-<br/><br/>
+<br/>
 To transform this task to traditional image classification, spectrogram values are mapped to a 0-255 range to output a size 225x225 grayscale image. To enhance fine-detail visibility, the CLAHE algorithm is applied.
 
 <h2>Usage</h2>

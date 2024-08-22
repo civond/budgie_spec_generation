@@ -17,11 +17,6 @@ def make_directories(dir_name, bird_name):
         voc_dir = os.path.join(bird_dir, "voc")
         noise_dir = os.path.join(bird_dir, "noise")
         
-        print(dir_name)
-        print(bird_dir)
-        print(voc_dir)
-        print(noise_dir)
-        
         os.mkdir(dir_name)
         os.mkdir(bird_dir)
         os.mkdir(voc_dir)
